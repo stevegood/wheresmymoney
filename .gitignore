@@ -19,3 +19,4 @@ stacktrace.log
 *.eml
 /.idea/
 .project
+atlassian-ide-plugin.xml
