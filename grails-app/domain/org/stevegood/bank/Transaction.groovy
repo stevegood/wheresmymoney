@@ -13,19 +13,26 @@ class Transaction {
     String name
     String displayName
     String memo
-    long amount
+    Double amount
     String fitId
-    long statementBalance
-    long statementTraceNumber
+    Double statementBalance
+    String statementTraceNumber
     String statementTransactionType
+    String importXml
 
     static belongsTo = [account:Account]
 
     static constraints = {
+        importXml nullable: true, blank: true
     }
 
     static mapping = {
         transactionDate index: 'transactionDate_Idx'
         fitId index: 'fitId_Idx'
+        importXml type: 'text'
+    }
+
+    String toString() {
+        name
     }
 }

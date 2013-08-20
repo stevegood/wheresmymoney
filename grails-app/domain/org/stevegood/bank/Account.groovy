@@ -15,4 +15,8 @@ class Account {
 
     static constraints = {
     }
+
+    String toString() {
+        name
+    }
 }

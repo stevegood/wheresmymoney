@@ -13,4 +13,8 @@ class Bank {
 
     static constraints = {
     }
+
+    String toString() {
+        name
+    }
 }
