@@ -21,7 +21,9 @@ class BootStrap {
 
             String filePath = '/Users/steve/Downloads/Checking_7_History_8-1-2013_8-14-2013.qfx'
             File file = new File(filePath)
-            bankImportService.importFromSgml(file, demoAccount)
+            if (file.exists()) {
+                bankImportService.importFromSgml(file, demoAccount)
+            }
         }
     }
     def destroy = {
