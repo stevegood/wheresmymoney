@@ -16,6 +16,10 @@ class Account {
     static constraints = {
     }
 
+    static mapping = {
+        transactions sort: 'transactionDate', order: 'asc'
+    }
+
     String toString() {
         name
     }

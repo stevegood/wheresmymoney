@@ -1,0 +1,380 @@
+OFXHEADER:100
+DATA:OFXSGML
+VERSION:102
+SECURITY:NONE
+ENCODING:USASCII
+CHARSET:1252
+COMPRESSION:NONE
+OLDFILEUID:NONE
+NEWFILEUID:NONE
+
+<OFX>
+  <SIGNONMSGSRSV1>
+    <SONRS>
+      <STATUS>
+        <CODE>0</CODE>
+        <SEVERITY>INFO</SEVERITY>
+        <MESSAGE>Signon OK</MESSAGE>
+      </STATUS>
+      <DTSERVER>20130815151738.045[-5:CDT]</DTSERVER>
+      <LANGUAGE>ENG</LANGUAGE>
+      <DTPROFUP>20060310174900.000</DTPROFUP>
+      <DTACCTUP>20130815120000.000</DTACCTUP>
+      <FI>
+        <ORG>Credit Union</ORG>
+        <FID>123456789</FID>
+      </FI>
+      <USERS.TYPE>3</USERS.TYPE>
+      <USERS.PRIMACN>999999</USERS.PRIMACN>
+      <INTU.BID>54321</INTU.BID>
+      <INTU.USERID>999999</INTU.USERID>
+      <USERS.DTLASTLOGIN>20130814130851.998</USERS.DTLASTLOGIN>
+      <USERS.WEBINJECTION>
+        <FORENSICSID>56625462</FORENSICSID>
+      </USERS.WEBINJECTION>
+    </SONRS>
+  </SIGNONMSGSRSV1>
+  <BANKMSGSRSV1>
+    <STMTTRNRS>
+      <TRNUID>22ded557-e107-4afa-aa8e-e329a5ab13e0</TRNUID>
+      <STATUS>
+        <CODE>0</CODE>
+        <SEVERITY>INFO</SEVERITY>
+        <MESSAGE>Statement OK</MESSAGE>
+      </STATUS>
+      <STMTRS>
+        <CURDEF>USD</CURDEF>
+        <BANKACCTFROM>
+          <BANKID>311090673</BANKID>
+          <ACCTID>769740=7</ACCTID>
+          <ACCTTYPE>CHECKING</ACCTTYPE>
+        </BANKACCTFROM>
+        <BANKTRANLIST>
+          <DTSTART>20130808000000</DTSTART>
+          <DTEND>20130815120000.000</DTEND>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130809120000.000</DTPOSTED>
+            <DTUSER>20130808120000.000</DTUSER>
+            <TRNAMT>-100.05</TRNAMT>
+            <FITID>63042_18448</FITID>
+            <NAME>TX 512 4408449 GREENLING INC</NAME>
+            <MEMO>Checking withdrawal  @ TX 512 4408449 GREENLING INC USGREENLING INC  Trace #10001</MEMO>
+            <USERS.STMT>
+              <TRNBAL>-60.85</TRNBAL>
+              <TRNTYPE>POSW</TRNTYPE>
+              <TRACENUMBER>10001</TRACENUMBER>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130809120000.000</DTPOSTED>
+            <DTUSER>20130809120000.000</DTUSER>
+            <TRNAMT>-30</TRNAMT>
+            <FITID>63043_18451</FITID>
+            <NAME>TX 214 3504881 PARKING SYSTEMS</NAME>
+            <MEMO>Checking withdrawal  @ TX 214 3504881 PARKING SYSTEMS OF USPARKING SYSTEMS  Trace #2215</MEMO>
+            <USERS.STMT>
+              <TRNBAL>-90.85</TRNBAL>
+              <TRNTYPE>POSW</TRNTYPE>
+              <TRACENUMBER>2215</TRACENUMBER>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130809120000.000</DTPOSTED>
+            <DTUSER>20130809120000.000</DTUSER>
+            <TRNAMT>-28</TRNAMT>
+            <FITID>63043_18453</FITID>
+            <NAME>Checking Withdrawal</NAME>
+            <MEMO>Checking withdrawal Checking - Courtesy Pay Fee, 28.00</MEMO>
+            <USERS.STMT>
+              <TRNBAL>-118.85</TRNBAL>
+              <TRNTYPE>DRAFTWDL</TRNTYPE>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEP</TRNTYPE>
+            <DTPOSTED>20130809120000.000</DTPOSTED>
+            <DTUSER>20130809120000.000</DTUSER>
+            <TRNAMT>1639.83</TRNAMT>
+            <FITID>63043_18455</FITID>
+            <NAME>Checking Deposit</NAME>
+            <MEMO>Checking Deposit </MEMO>
+            <USERS.STMT>
+              <TRNBAL>1520.98</TRNBAL>
+              <TRNTYPE>DRAFTDEP</TRNTYPE>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130809120000.000</DTPOSTED>
+            <DTUSER>20130809120000.000</DTUSER>
+            <TRNAMT>-380</TRNAMT>
+            <FITID>63043_18456</FITID>
+            <NAME>Transfer</NAME>
+            <MEMO>Checking withdrawal  Transfer 'STL' 380.00 to acct: ****40-5</MEMO>
+            <USERS.STMT>
+              <TRNBAL>1140.98</TRNBAL>
+              <TRNTYPE>DRAFTWDL</TRNTYPE>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130810120000.000</DTPOSTED>
+            <DTUSER>20130809120000.000</DTUSER>
+            <TRNAMT>-53.13</TRNAMT>
+            <FITID>63043_18463</FITID>
+            <NAME>TX KELLER 2061 RUFE SNOW</NAME>
+            <MEMO>Checking withdrawal  @ TX KELLER 2061 RUFE SNOW USKROGER  Trace #55596</MEMO>
+            <USERS.STMT>
+              <TRNBAL>1087.85</TRNBAL>
+              <TRNTYPE>POSW</TRNTYPE>
+              <TRACENUMBER>55596</TRACENUMBER>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130810120000.000</DTPOSTED>
+            <DTUSER>20130812120000.000</DTUSER>
+            <TRNAMT>-35.35</TRNAMT>
+            <FITID>63046_18465</FITID>
+            <NAME>TX DALLAS MERCADO JUAREZ #24</NAME>
+            <MEMO>Checking withdrawal  @ TX DALLAS MERCADO JUAREZ #24 USMERCADO JUAREZ #  Trace #58007</MEMO>
+            <USERS.STMT>
+              <TRNBAL>1052.5</TRNBAL>
+              <TRNTYPE>POSW</TRNTYPE>
+              <TRACENUMBER>58007</TRACENUMBER>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130812120000.000</DTPOSTED>
+            <DTUSER>20130812120000.000</DTUSER>
+            <TRNAMT>-125</TRNAMT>
+            <FITID>63046_18469</FITID>
+            <CHECKNUM>2329</CHECKNUM>
+            <NAME>Checking Withdrawal</NAME>
+            <MEMO>Checking withdrawal (Item #2329) </MEMO>
+            <USERS.STMT>
+              <TRNBAL>927.5</TRNBAL>
+              <TRNTYPE>DRAFTWDL</TRNTYPE>
+              <TRACENUMBER>75065748</TRACENUMBER>
+              <HYPERLINK>Y</HYPERLINK>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130813120000.000</DTPOSTED>
+            <DTUSER>20130813120000.000</DTUSER>
+            <TRNAMT>-6.35</TRNAMT>
+            <FITID>63047_18472</FITID>
+            <NAME>TX N RICHLAND HI JACK IN THE</NAME>
+            <MEMO>Checking withdrawal  @ TX N RICHLAND HI JACK IN THE BOX #47USJACK IN THE BOX  Trace #91</MEMO>
+            <USERS.STMT>
+              <TRNBAL>921.15</TRNBAL>
+              <TRNTYPE>POSW</TRNTYPE>
+              <TRACENUMBER>91</TRACENUMBER>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130813120000.000</DTPOSTED>
+            <DTUSER>20130813120000.000</DTUSER>
+            <TRNAMT>-503</TRNAMT>
+            <FITID>63047_18473</FITID>
+            <NAME>WEBTXU ENERGY (TXU ACH)</NAME>
+            <MEMO>Checking withdrawal-ACH-A-TXU WEBTXU ENERGY (TXU ACH) 173337028100000000000000000000035416770632</MEMO>
+            <USERS.STMT>
+              <TRNBAL>418.15</TRNBAL>
+              <TRNTYPE>DRAFTWDL</TRNTYPE>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130813120000.000</DTPOSTED>
+            <DTUSER>20130813120000.000</DTUSER>
+            <TRNAMT>-37.38</TRNAMT>
+            <FITID>63047_18477</FITID>
+            <NAME>TX KELLER QUIKTRIP USQUIKTRIP</NAME>
+            <MEMO>Checking withdrawal  @ TX KELLER QUIKTRIP USQUIKTRIP  Trace #66987</MEMO>
+            <USERS.STMT>
+              <TRNBAL>380.77</TRNBAL>
+              <TRNTYPE>POSW</TRNTYPE>
+              <TRACENUMBER>66987</TRACENUMBER>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130813120000.000</DTPOSTED>
+            <DTUSER>20130813120000.000</DTUSER>
+            <TRNAMT>-9.38</TRNAMT>
+            <FITID>63047_18480</FITID>
+            <NAME>TX RICHARDSON KUNG POW ASIAN</NAME>
+            <MEMO>Checking withdrawal  @ TX RICHARDSON KUNG POW ASIAN DINEUSKUNG POW ASIAN D  Trace #70824</MEMO>
+            <USERS.STMT>
+              <TRNBAL>371.39</TRNBAL>
+              <TRNTYPE>POSW</TRNTYPE>
+              <TRACENUMBER>70824</TRACENUMBER>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130813120000.000</DTPOSTED>
+            <DTUSER>20130813120000.000</DTUSER>
+            <TRNAMT>-35.5</TRNAMT>
+            <FITID>63047_18483</FITID>
+            <NAME>TX N RICHLAND H QUIKTRIP</NAME>
+            <MEMO>Checking withdrawal  @ TX N RICHLAND H QUIKTRIP USQUIKTRIP  Trace #92527</MEMO>
+            <USERS.STMT>
+              <TRNBAL>335.89</TRNBAL>
+              <TRNTYPE>POSW</TRNTYPE>
+              <TRACENUMBER>92527</TRACENUMBER>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130813120000.000</DTPOSTED>
+            <DTUSER>20130813120000.000</DTUSER>
+            <TRNAMT>-110</TRNAMT>
+            <FITID>63047_18484</FITID>
+            <NAME>DELL PREFERRED (ONLINE PMT) </NAME>
+            <MEMO>Checking withdrawal-ACH-A-BOAVM DELL PREFERRED (ONLINE PMT) </MEMO>
+            <USERS.STMT>
+              <TRNBAL>225.89</TRNBAL>
+              <TRNTYPE>DRAFTWDL</TRNTYPE>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130813120000.000</DTPOSTED>
+            <DTUSER>20130813120000.000</DTUSER>
+            <TRNAMT>-28</TRNAMT>
+            <FITID>63047_18485</FITID>
+            <NAME>Checking Withdrawal</NAME>
+            <MEMO>Checking withdrawal Checking - Courtesy Pay Fee, 28.00</MEMO>
+            <USERS.STMT>
+              <TRNBAL>197.89</TRNBAL>
+              <TRNTYPE>DRAFTWDL</TRNTYPE>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130814120000.000</DTPOSTED>
+            <DTUSER>20130813120000.000</DTUSER>
+            <TRNAMT>-106.51</TRNAMT>
+            <FITID>63047_18488</FITID>
+            <NAME>TX SOUTHLAKE MEDX IMAGING</NAME>
+            <MEMO>Checking withdrawal  @ TX SOUTHLAKE MEDX IMAGING USMEDX IMAGING  Trace #22282</MEMO>
+            <USERS.STMT>
+              <TRNBAL>91.38</TRNBAL>
+              <TRNTYPE>POSW</TRNTYPE>
+              <TRACENUMBER>22282</TRACENUMBER>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130814120000.000</DTPOSTED>
+            <DTUSER>20130814120000.000</DTUSER>
+            <TRNAMT>-24.89</TRNAMT>
+            <FITID>63048_18490</FITID>
+            <NAME>CA 866 712 7753 APL*APPLE</NAME>
+            <MEMO>Checking withdrawal  @ CA 866 712 7753 APL*APPLE ITUNES STUSAPL*APPLE ITUNES  Trace #55722</MEMO>
+            <USERS.STMT>
+              <TRNBAL>66.49</TRNBAL>
+              <TRNTYPE>POSW</TRNTYPE>
+              <TRACENUMBER>55722</TRACENUMBER>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130814120000.000</DTPOSTED>
+            <DTUSER>20130814120000.000</DTUSER>
+            <TRNAMT>-16.41</TRNAMT>
+            <FITID>63048_18492</FITID>
+            <NAME>TX KELLER QT 968 08009USQT 968</NAME>
+            <MEMO>Checking withdrawal  @ TX KELLER QT 968 08009USQT 968 08  Trace #48953</MEMO>
+            <USERS.STMT>
+              <TRNBAL>50.08</TRNBAL>
+              <TRNTYPE>POSW</TRNTYPE>
+              <TRACENUMBER>48953</TRACENUMBER>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130814120000.000</DTPOSTED>
+            <DTUSER>20130814120000.000</DTUSER>
+            <TRNAMT>-25</TRNAMT>
+            <FITID>63048_18493</FITID>
+            <NAME>WEBCAPITAL ONE (CRCARDPMT) </NAME>
+            <MEMO>Checking withdrawal-ACH-A-CAPITAL WEBCAPITAL ONE (CRCARDPMT) </MEMO>
+            <USERS.STMT>
+              <TRNBAL>25.08</TRNBAL>
+              <TRNTYPE>DRAFTWDL</TRNTYPE>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130814120000.000</DTPOSTED>
+            <DTUSER>20130814120000.000</DTUSER>
+            <TRNAMT>-28</TRNAMT>
+            <FITID>63048_18495</FITID>
+            <NAME>Checking Withdrawal</NAME>
+            <MEMO>Checking withdrawal Checking - Courtesy Pay Fee, 28.00</MEMO>
+            <USERS.STMT>
+              <TRNBAL>-2.92</TRNBAL>
+              <TRNTYPE>DRAFTWDL</TRNTYPE>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130814120000.000</DTPOSTED>
+            <DTUSER>20130814120000.000</DTUSER>
+            <TRNAMT>-356.44</TRNAMT>
+            <FITID>63048_18497</FITID>
+            <NAME>WEBATT (Payment) </NAME>
+            <MEMO>Checking withdrawal-ACH-A-ATT WEBATT (Payment) </MEMO>
+            <USERS.STMT>
+              <TRNBAL>-359.36</TRNBAL>
+              <TRNTYPE>DRAFTWDL</TRNTYPE>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEBIT</TRNTYPE>
+            <DTPOSTED>20130814120000.000</DTPOSTED>
+            <DTUSER>20130814120000.000</DTUSER>
+            <TRNAMT>-28</TRNAMT>
+            <FITID>63048_18499</FITID>
+            <NAME>Checking Withdrawal</NAME>
+            <MEMO>Checking withdrawal Checking - Courtesy Pay Fee, 28.00</MEMO>
+            <USERS.STMT>
+              <TRNBAL>-387.36</TRNBAL>
+              <TRNTYPE>DRAFTWDL</TRNTYPE>
+            </USERS.STMT>
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DEP</TRNTYPE>
+            <DTPOSTED>20130815120000.000</DTPOSTED>
+            <DTUSER>20130815120000.000</DTUSER>
+            <TRNAMT>1147.23</TRNAMT>
+            <FITID>63049_18502</FITID>
+            <NAME>Checking Deposit</NAME>
+            <MEMO>Checking Deposit </MEMO>
+            <USERS.STMT>
+              <TRNBAL>759.87</TRNBAL>
+              <TRNTYPE>DRAFTDEP</TRNTYPE>
+            </USERS.STMT>
+          </STMTTRN>
+        </BANKTRANLIST>
+        <LEDGERBAL>
+          <BALAMT>759.87</BALAMT>
+          <DTASOF>20130815120000.000</DTASOF>
+        </LEDGERBAL>
+        <AVAILBAL>
+          <BALAMT>606.51</BALAMT>
+          <DTASOF>20130815120000.000</DTASOF>
+        </AVAILBAL>
+      </STMTRS>
+    </STMTTRNRS>
+  </BANKMSGSRSV1>
+</OFX>

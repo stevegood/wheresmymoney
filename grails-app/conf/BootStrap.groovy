@@ -7,6 +7,7 @@ import org.stevegood.sec.UserRole
 class BootStrap {
 
     def bankImportService
+    def grailsApplication
 
     def init = { servletContext ->
         if (User.count() == 0) {
@@ -19,8 +20,10 @@ class BootStrap {
             Bank demoBank = new Bank(name: 'Demo Bank', primaryOwner: demoUser).save(flush: true, insert: true)
             Account demoAccount = new Account(name: 'Demo Checking Account', type: Account.CHECKING, bank: demoBank).save(flush: true, insert: true)
 
-            String filePath = '/Users/steve/Downloads/Checking_7_History_8-1-2013_8-14-2013.qfx'
+            // Load some demo data
+            String filePath = new File(URLDecoder.decode(grailsApplication.classLoader.getResource('Demo_Checking_Account.qfx').getPath(), "utf-8")).getPath()
             File file = new File(filePath)
+            println "Attempting to load: '$filePath' :: Exists? ${file.exists()}"
             if (file.exists()) {
                 bankImportService.importFromSgml(file, demoAccount)
             }
