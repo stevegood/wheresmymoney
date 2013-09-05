@@ -28,16 +28,34 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="${(params.controller == 'admin' && params.action == 'index') ? 'active' : ''}">
-                    <g:link controller="main" action="index">Home</g:link>
-                </li>
-                <sec:ifAllGranted roles="ROLE_SUPER_ADMIN">
-                    <li class="${params.controller == 'admin' ? 'active' : ''}">
-                        <g:link controller="admin" action="index">
-                            <g:message code="menu.admin" default="Admin" />
-                        </g:link>
+                <sec:ifLoggedIn>
+                    <li class="${(params.controller == 'main' && params.action == 'index') ? 'active' : ''}">
+                        <g:link controller="main" action="index">Dashboard</g:link>
                     </li>
-                </sec:ifAllGranted>
+                    <li class="${(params.controller == 'bank') ? 'active' : ''}">
+                        <g:link controller="bank" action="list">My Banks</g:link>
+                    </li>
+                    <sec:ifAllGranted roles="ROLE_SUPER_ADMIN">
+                        <li class="${params.controller == 'admin' ? 'active' : ''}">
+                            <g:link controller="admin" action="index">
+                                <g:message code="menu.admin" default="Admin" />
+                            </g:link>
+                        </li>
+                    </sec:ifAllGranted>
+                </sec:ifLoggedIn>
+            </ul>
+
+            <ul class="nav navbar-nav pull-right">
+                <sec:ifLoggedIn>
+                    <li>
+                        <g:link controller="logout" action="index">Logout</g:link>
+                    </li>
+                </sec:ifLoggedIn>
+                <sec:ifNotLoggedIn>
+                    <li>
+                        <g:link controller="login" action="auth">Login</g:link>
+                    </li>
+                </sec:ifNotLoggedIn>
             </ul>
         </div>
     </div>
