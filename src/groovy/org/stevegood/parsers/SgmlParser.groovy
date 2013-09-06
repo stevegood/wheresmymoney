@@ -9,16 +9,43 @@ package org.stevegood.parsers
  */
 class SgmlParser {
 
-    def extractXml(File file) {
+    def extractXml(File file) throws ParserException {
         def lines = []
+        Boolean xmlFound = false
         file.eachLine {
             def line = it.trim()
-            if ( line?.length() && line?.getAt(0) == '<') {
+            if (!xmlFound && line?.length() && line?.getAt(0) == '<') {
+                xmlFound = true
+            }
+
+            if (xmlFound) {
                 lines << line
             }
         }
 
-        new XmlSlurper().parseText(lines.join(''))
+        def linesReversed = lines.reverse()
+        lines = []
+        xmlFound = false
+        linesReversed.each {
+            if (!xmlFound && it?.length() && it?.getAt(0) == '<') {
+                xmlFound = true
+            }
+
+            if (xmlFound) {
+                lines << it
+            }
+        }
+
+        lines = lines.reverse()
+
+        def xmlSlurper
+        try {
+            xmlSlurper = new XmlSlurper().parseText(lines.join(''))
+        } catch ( e ) {
+            throw new ParserException(message: "Could not parse file for reason: ${e.message}" ,detail: e.message, file: file)
+        }
+
+        return xmlSlurper
     }
 
 }
