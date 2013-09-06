@@ -17,4 +17,9 @@ modules = {
     loginform {
         resource url: 'css/login-form.css'
     }
+
+    importTransactions {
+        dependsOn 'jquery'
+        resource url: 'js/transaction/importTransactions.js'
+    }
 }

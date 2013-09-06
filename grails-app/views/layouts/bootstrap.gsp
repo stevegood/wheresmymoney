@@ -35,6 +35,9 @@
                     <li class="${(params.controller == 'bank') ? 'active' : ''}">
                         <g:link controller="bank" action="list">My Banks</g:link>
                     </li>
+                    <li class="${(params.controller == 'transaction' && params.action == 'importTransactions') ? 'active' : ''}">
+                        <g:link controller="transaction" action="import">Import Transactions</g:link>
+                    </li>
                     <sec:ifAllGranted roles="ROLE_SUPER_ADMIN">
                         <li class="${params.controller == 'admin' ? 'active' : ''}">
                             <g:link controller="admin" action="index">
