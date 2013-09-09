@@ -22,4 +22,8 @@ modules = {
         dependsOn 'jquery'
         resource url: 'js/transaction/importTransactions.js'
     }
+
+    chartjs {
+        resource url: 'js/Chart.min.js'
+    }
 }
