@@ -3,7 +3,7 @@
 	<head>
 		<meta name="layout" content="bootstrap"/>
 		<title>Welcome</title>
-        <r:require modules="jquery,chartjs" />
+        <r:require modules="dashboard" />
         <style>
             #categoriesLegend .item {
                 display: block;
@@ -14,7 +14,7 @@
             }
 
             #sidebar {
-                margin-top: 30px;
+                margin: 7px 0 0 0;
             }
         </style>
 	</head>
@@ -37,50 +37,29 @@
                 </div>
             </div>
 
-            <div id="sidebar" class="col-md-3 well">
+            <div id="sidebar" class="col-md-3">
                 %{--Sidebar--}%
-                <ul>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
+                <div class="page-header">
+                    <h3><g:message code="banks.and.accounts" default="Banks &amp; Accounts" /></h3>
+                </div>
+                <ul class="nav nav-stacked">
+                    <g:each in="${banks}" var="bank">
+                        <li>
+                            <g:link controller="bank" action="show" id="${bank.id}">${bank.name}</g:link>
+                            <ul class="nav nav-stacked">
+                                <g:each in="${bank.accounts}" var="account">
+                                    <li>
+                                        <g:link controller="account" action="show" id="${account.id}">${account.name} <span class="pull-right">${account.balance}</span></g:link>
+                                    </li>
+                                </g:each>
+                            </ul>
+                        </li>
+                    </g:each>
                 </ul>
             </div>
         </div>
 
     </div>
-
-    <r:script>
-    jQuery(function($){
-        var ctx = $('#categoriesChart').get(0).getContext("2d"),
-            pieData = [
-            {
-                value: 30,
-                title: "Fast Food",
-                color: "${org.stevegood.util.color.ColorUtils.randomHexColor()}"
-            },
-            {
-                value: 50,
-                title: "Personal",
-                color: "${org.stevegood.util.color.ColorUtils.randomHexColor()}"
-            },
-            {
-                value: 100,
-                title: "Groceries",
-                color: "${org.stevegood.util.color.ColorUtils.randomHexColor()}"
-            }],
-            categoriesChart = new Chart(ctx).Pie(pieData),
-            $categoriesLegend = $('#categoriesLegend');
-
-            $.each(pieData, function(){
-                $categoriesLegend.append(
-                    $('<span class="item">').css('borderColor', this.color, 'borderStyle', 'solid').append(this.title)
-                );
-            });
-    });
-    </r:script>
 
 	</body>
 </html>

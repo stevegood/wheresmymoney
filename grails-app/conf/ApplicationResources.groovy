@@ -6,7 +6,6 @@ modules = {
     bootstrap {
         dependsOn 'jquery'
     	resource url: 'js/bootstrap.min.js'
-//    	resource url: 'css/bootstrap.min.css'
     	resource url: 'css/magic-bootstrap.css'
     }
 
@@ -25,5 +24,10 @@ modules = {
 
     chartjs {
         resource url: 'js/Chart.min.js'
+    }
+
+    dashboard {
+        dependsOn 'jquery,chartjs'
+        resource url: 'js/main/index.js'
     }
 }

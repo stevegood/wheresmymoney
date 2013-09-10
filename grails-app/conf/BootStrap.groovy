@@ -1,8 +1,11 @@
 import org.stevegood.bank.Account
 import org.stevegood.bank.Bank
+import org.stevegood.bank.Transaction
+import org.stevegood.meta.Category
 import org.stevegood.sec.Role
 import org.stevegood.sec.User
 import org.stevegood.sec.UserRole
+import org.stevegood.util.color.ColorUtils
 
 class BootStrap {
 
@@ -10,6 +13,7 @@ class BootStrap {
     def grailsApplication
 
     def init = { servletContext ->
+
         if (User.count() == 0) {
             // setup the application
             User admin = new User(username: 'admin', password: 'admin', enabled: true).save(flush: true, insert: true)
@@ -25,7 +29,20 @@ class BootStrap {
             File file = new File(filePath)
             println "Attempting to load: '$filePath' :: Exists? ${file.exists()}"
             if (file.exists()) {
-                bankImportService.importFromSgml(file, demoAccount)
+                def transactions = bankImportService.importFromSgml(file, demoAccount)
+                def categories = []
+                def numCats = 5
+                numCats.times {
+                    categories << new Category(name: "Demo Category ${it + 1}", color: ColorUtils.randomHexColor()).save(insert: true, flush: true)
+                    println "Added category: ${categories[-1].name}"
+                }
+
+                transactions.each { Transaction transaction ->
+                    def rnd = new Random().nextInt(numCats)
+                    def category = categories[rnd]
+                    println "Attempting to add category: ${category.name} to transaction: ${transaction.displayName}"
+                    transaction.addCategory(category)
+                }
             }
         }
     }

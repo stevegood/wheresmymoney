@@ -2,6 +2,7 @@ package org.stevegood.bank
 
 class Account {
 
+    static transients = ['balance']
     static SAVINGS = 'account.savings'
     static CHECKING = 'account.checking'
 
@@ -22,5 +23,9 @@ class Account {
 
     String toString() {
         name
+    }
+
+    def getBalance(){
+        Transaction.findByAccount(this,[sort: 'datePosted', order: 'desc'])?.amount ?: 0
     }
 }

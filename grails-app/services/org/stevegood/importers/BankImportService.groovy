@@ -34,7 +34,7 @@ class BankImportService {
                         break
                 }
 
-                transaction.save()
+                transaction.save(flush: true)
                 transactions << transaction
             }
         }
