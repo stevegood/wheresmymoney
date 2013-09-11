@@ -10,11 +10,11 @@ body {
     color: #af0003;
 }
 
-.nav .nav > li > a {
+#sidebar .nav .nav > li > a {
     padding-left:20px;
     font-size: 90%;
 }
 
-.nav > li > a {
+#sidebar .nav > li > a {
     padding: 3px 6px 3px 6px;
 }
