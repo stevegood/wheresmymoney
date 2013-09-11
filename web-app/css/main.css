@@ -9,12 +9,3 @@ body {
 .transaction-negative {
     color: #af0003;
 }
-
-#sidebar .nav .nav > li > a {
-    padding-left:20px;
-    font-size: 90%;
-}
-
-#sidebar .nav > li > a {
-    padding: 3px 6px 3px 6px;
-}

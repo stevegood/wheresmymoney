@@ -38,13 +38,13 @@ class TransactionController {
         }
 
         def ts = new Date().time.toString()
-        File tmpFile = File.createTempFile(ts, file.originalFilename)
+        File tmpFile = File.createTempFile(ts, file.originalFilename as String)
         file.transferTo(tmpFile)
 
         def transactions = bankImportService.importFromSgml(tmpFile, account)
         tmpFile.delete()
 
         flash.message = "Successfully imported ${transactions.size()}"
-        redirect(controller: 'main', action: 'index')
+        redirect(controller: 'dashboard', action: 'index')
     }
 }

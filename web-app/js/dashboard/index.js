@@ -7,16 +7,19 @@
  */
 
 function getCategoryOverview($) {
+    if ($ === undefined) {
+        $ = jQuery;
+    }
     var ctx = $('#categoriesChart').get(0).getContext("2d"),
         categoriesChart,
         $categoriesLegend = $('#categoriesLegend');
 
     $.getJSON('/dashboard/categoryOverview', {}, function(result){
-        categoriesChart = new Chart(ctx).Pie(result.categories);
+        categoriesChart = new Chart(ctx).Pie(result.data);
         $categoriesLegend.html('');
-        $.each(result.categories, function(){
+        $.each(result.data, function(){
             $categoriesLegend.append(
-                $('<span class="item">').css('borderColor', this.color, 'borderStyle', 'solid').append(this.title)
+                $('<span class="item">').css('borderColor', this.color, 'borderStyle', 'solid').append(this.value + ' :: ' + this.title)
             );
         });
     });

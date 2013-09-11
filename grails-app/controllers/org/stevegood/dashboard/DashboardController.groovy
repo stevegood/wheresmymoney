@@ -1,6 +1,7 @@
-package org.stevegood.dahsboard
+package org.stevegood.dashboard
 
 import grails.converters.JSON
+import org.stevegood.bank.Bank
 import org.stevegood.bank.Transaction
 import org.stevegood.sec.User
 import org.stevegood.meta.Category
@@ -10,12 +11,28 @@ class DashboardController {
     def springSecurityService
 
     def afterInterceptor = { model ->
-        render( model as JSON )
-        return
+        if (params.action != 'index') {
+            render( model as JSON )
+            return
+        }
+    }
+
+    def index() {
+
+        User user = User.findByUsername(springSecurityService.currentUser.username as String)
+        int bankCount = Bank.countByPrimaryOwner(user)
+        if (bankCount == 0) {
+            redirect controller: 'bank', action: 'create'
+            return
+        }
+
+        def banks = Bank.findAllByPrimaryOwner(user)
+
+        [banks: banks]
     }
 
     def categoryOverview() {
-        def result = [categories: []]
+        def result = [data: []]
         def categoryMaps = ['uncategorized': [color: '#f2f2f2', value: 0, title: 'Uncategorized']]
         User user = User.findByUsername(springSecurityService.currentUser.username as String)
         def transactions = Transaction.withCriteria {
@@ -43,10 +60,10 @@ class DashboardController {
         }
 
         categoryMaps.each { key, value ->
-            result.categories << value
+            result.data << value
         }
 
-        result.categories = result.categories.sort { it.title }
+        result.data = result.data.sort { a,b -> b.value <=> a.value }
 
         return result
     }

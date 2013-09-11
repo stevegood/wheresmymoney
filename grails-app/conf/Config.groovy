@@ -95,6 +95,8 @@ log4j = {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'org.stevegood.sec.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'org.stevegood.sec.UserRole'
 grails.plugins.springsecurity.authority.className = 'org.stevegood.sec.Role'
+grails.plugins.springsecurity.successHandler.alwaysUseDefault = true
+grails.plugins.springsecurity.successHandler.defaultTargetUrl = '/user/loginSuccess'
 grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
 grails.plugins.springsecurity.interceptUrlMap = [
         '/js/**':           ['IS_AUTHENTICATED_ANONYMOUSLY'],

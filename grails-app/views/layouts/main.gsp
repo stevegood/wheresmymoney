@@ -1,28 +1,71 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title><g:layoutTitle default="Grails"/></title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico')}" type="image/x-icon">
-		<link rel="apple-touch-icon" href="${resource(dir: 'images', file: 'apple-touch-icon.png')}">
-		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
-		<g:layoutHead/>
-		<r:layoutResources />
-	</head>
-	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
-		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
-		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
-		<g:javascript library="application"/>
-		<r:layoutResources />
-	</body>
+<%--
+  Created by IntelliJ IDEA.
+  User: stgood
+  Date: 8/20/13
+  Time: 12:35 PM
+  To change this template use File | Settings | File Templates.
+--%>
+
+<%@ page contentType="text/html;charset=UTF-8" %>
+<html>
+<head>
+    <title><g:layoutTitle/> - <g:message code="wheres.my.money" default="Where's My Money" /></title>
+    <r:require modules="bootstrap,main" />
+    <r:layoutResources />
+    <g:layoutHead />
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <g:link controller="dashboard" action="index" class="navbar-brand">Where's My Money</g:link>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <sec:ifLoggedIn>
+                    <li class="${(params.controller == 'main' && params.action == 'index') ? 'active' : ''}">
+                        <g:link controller="dashboard" action="index">Dashboard</g:link>
+                    </li>
+                    <li class="${(params.controller == 'bank') ? 'active' : ''}">
+                        <g:link controller="bank" action="list">My Banks</g:link>
+                    </li>
+                    <li class="${(params.controller == 'transaction' && params.action == 'importTransactions') ? 'active' : ''}">
+                        <g:link controller="transaction" action="import">Import Transactions</g:link>
+                    </li>
+                    <sec:ifAllGranted roles="ROLE_SUPER_ADMIN">
+                        <li class="${params.controller == 'admin' ? 'active' : ''}">
+                            <g:link controller="admin" action="index">
+                                <g:message code="menu.admin" default="Admin" />
+                            </g:link>
+                        </li>
+                    </sec:ifAllGranted>
+                </sec:ifLoggedIn>
+            </ul>
+
+            <ul class="nav navbar-nav pull-right">
+                <sec:ifLoggedIn>
+                    <li>
+                        <g:link controller="logout" action="index">Logout</g:link>
+                    </li>
+                </sec:ifLoggedIn>
+                <sec:ifNotLoggedIn>
+                    <li>
+                        <g:link controller="login" action="auth">Login</g:link>
+                    </li>
+                </sec:ifNotLoggedIn>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<g:layoutBody/>
+
+<r:layoutResources />
+</body>
 </html>

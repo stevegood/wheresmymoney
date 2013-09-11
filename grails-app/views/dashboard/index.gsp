@@ -1,22 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="bootstrap"/>
+		<meta name="layout" content="main"/>
 		<title>Welcome</title>
         <r:require modules="dashboard" />
-        <style>
-            #categoriesLegend .item {
-                display: block;
-                margin: 0.5em;
-                border-style: solid;
-                border-width: 0 0 0 1em;
-                padding: 0 0.3em;
-            }
-
-            #sidebar {
-                margin: 7px 0 0 0;
-            }
-        </style>
 	</head>
 	<body>
 

@@ -1,4 +1,4 @@
-<r:require module="loginform" />
+<r:require module="auth" />
 
 <form action="${postUrl}" method="POST" class="form-signin">
     <h2 class="form-signin-heading">Please sign in</h2>

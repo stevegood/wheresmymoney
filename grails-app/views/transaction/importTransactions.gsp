@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Import Transactions</title>
-    <meta name="layout" content="bootstrap" />
+    <meta name="layout" content="main" />
     <r:require module="importTransactions" />
 </head>
 
