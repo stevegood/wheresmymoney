@@ -8,4 +8,8 @@ class UserCategory extends Category {
 
     static constraints = {
     }
+
+    String toString() {
+        name
+    }
 }

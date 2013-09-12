@@ -11,7 +11,8 @@ import org.junit.*
 @TestFor(Transaction)
 class TransactionTests {
 
-    void testSomething() {
-       fail "Implement me"
+    void testToString() {
+        def transaction = new Transaction(displayName: 'testing')
+        assert transaction.toString() == 'testing'
     }
 }

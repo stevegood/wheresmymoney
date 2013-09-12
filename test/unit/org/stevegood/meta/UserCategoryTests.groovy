@@ -9,7 +9,8 @@ import org.junit.*
 @TestFor(UserCategory)
 class UserCategoryTests {
 
-    void testSomething() {
-        fail "Implement me"
+    void testToString() {
+        def category = new UserCategory(name: 'Testing', color: '#000000')
+        assert category.toString() == 'Testing'
     }
 }

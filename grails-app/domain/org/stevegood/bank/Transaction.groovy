@@ -36,7 +36,7 @@ class Transaction {
     }
 
     String toString() {
-        name
+        displayName
     }
 
     def getCategories() {

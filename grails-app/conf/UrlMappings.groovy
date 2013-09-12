@@ -10,7 +10,7 @@ class UrlMappings {
 		"/"(controller: 'dashboard', action: 'index')
         "/login"(controller: 'login', action: 'auth')
         "/logout"(controller: 'logout', action: 'index')
-        "/transaction/import"(controller: 'transaction', action: 'importTransactions')
+        "/transaction/importers"(controller: 'transaction', action: 'importTransactions')
 		"500"(view:'/error')
 	}
 }

@@ -11,7 +11,8 @@ import org.junit.*
 @TestFor(Account)
 class AccountTests {
 
-    void testSomething() {
-       fail "Implement me"
+    void testToString() {
+        def account = new Account(name:'testing')
+        assert account.toString() == 'testing'
     }
 }
