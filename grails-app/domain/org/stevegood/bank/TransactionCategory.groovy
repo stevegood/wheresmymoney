@@ -1,16 +1,16 @@
 package org.stevegood.bank
 
-import org.stevegood.meta.Category
+import org.stevegood.meta.UserCategory
 
 class TransactionCategory {
 
     Transaction transaction
-    Category category
+    UserCategory category
 
     static constraints = {
     }
 
-    static TransactionCategory create(Transaction transaction, Category category) {
+    static TransactionCategory create(Transaction transaction, UserCategory category) {
         TransactionCategory.findOrCreateByTransactionAndCategory(transaction, category).save()
     }
 }

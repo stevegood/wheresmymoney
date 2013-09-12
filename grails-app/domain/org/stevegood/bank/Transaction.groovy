@@ -1,7 +1,6 @@
 package org.stevegood.bank
 
-import org.stevegood.meta.Category
-import org.stevegood.util.color.ColorUtils
+import org.stevegood.meta.UserCategory
 
 class Transaction {
 
@@ -44,15 +43,15 @@ class Transaction {
         TransactionCategory.findAllByTransaction(this)?.collect { it.category }?.sort { it.name } ?: []
     }
 
-    def addCategory(Category category) {
+    def addCategory(UserCategory category) {
         TransactionCategory.create(this, category)
     }
 
-    def removeCategory(Category category) {
+    def removeCategory(UserCategory category) {
         TransactionCategory.findByTransactionAndCategory(this, category)?.delete(flush: true)
     }
 
-    static def findAllByCategory(Category category) {
+    static def findAllByCategory(UserCategory category) {
         TransactionCategory.findAllByCategory(category)?.collect { it.transaction } ?: []
     }
 }

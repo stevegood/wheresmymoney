@@ -1,7 +1,7 @@
 import org.stevegood.bank.Account
 import org.stevegood.bank.Bank
 import org.stevegood.bank.Transaction
-import org.stevegood.meta.Category
+import org.stevegood.meta.UserCategory
 import org.stevegood.sec.Role
 import org.stevegood.sec.User
 import org.stevegood.sec.UserRole
@@ -33,13 +33,13 @@ class BootStrap {
                 def categories = []
                 def numCats = 5
                 numCats.times {
-                    categories << new Category(name: "Demo Category ${it + 1}", color: ColorUtils.randomHexColor()).save(insert: true, flush: true)
+                    categories << new UserCategory(name: "Demo Category ${it + 1}", color: ColorUtils.randomHexColor(), user: demoUser).save(insert: true, flush: true)
                     println "Added category: ${categories[-1].name}"
                 }
 
                 transactions.each { Transaction transaction ->
                     def rnd = new Random().nextInt(numCats)
-                    def category = categories[rnd]
+                    UserCategory category = categories[rnd] as UserCategory
                     println "Attempting to add category: ${category.name} to transaction: ${transaction.displayName}"
                     transaction.addCategory(category)
                 }

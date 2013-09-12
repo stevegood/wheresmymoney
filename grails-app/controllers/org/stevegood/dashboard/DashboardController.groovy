@@ -3,8 +3,8 @@ package org.stevegood.dashboard
 import grails.converters.JSON
 import org.stevegood.bank.Bank
 import org.stevegood.bank.Transaction
+import org.stevegood.meta.UserCategory
 import org.stevegood.sec.User
-import org.stevegood.meta.Category
 
 class DashboardController {
 
@@ -46,7 +46,7 @@ class DashboardController {
         transactions.each { Transaction transaction ->
             if (transaction.categories?.size()) {
                 // the transaction has a category, add it to the collection
-                transaction.categories.each { Category category ->
+                transaction.categories.each { UserCategory category ->
                     if (!categoryMaps[category.name]) {
                         categoryMaps[category.name] = [color: category.color, value: 0, title: category.name]
                     }
