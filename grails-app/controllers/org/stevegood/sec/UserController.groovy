@@ -10,7 +10,7 @@ class UserController {
         if (user.authorities.contains(Role.findByAuthority('ROLE_SUPER_ADMIN'))) {
             redirect controller: 'admin', action: 'index'
         } else {
-            redirect controller: 'dashboard', action: 'index'
+            redirect controller: 'dashboard', action: 'overview'
         }
         return
     }

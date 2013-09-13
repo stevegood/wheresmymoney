@@ -31,7 +31,7 @@ modules = {
     dashboard {
         dependsOn 'jquery,chartjs'
         defaultBundle 'dashboard'
-        resource url: 'js/dashboard/index.js'
-        resource url: 'css/dashboard/index.css'
+        resource url: 'js/dashboard/overview.js'
+        resource url: 'css/dashboard/overview.css'
     }
 }

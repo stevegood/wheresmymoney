@@ -1,0 +1,27 @@
+#categoriesLegend .item {
+    display: block;
+    margin: 0.5em;
+    border-style: solid;
+    border-width: 0 0 0 1em;
+    padding: 0 0.3em;
+}
+
+#sidebar {
+    margin: 27px 0 0 0;
+}
+
+#sidebar  .page-header {
+    margin: 0px 0 10px;
+}
+
+#sidebar .page-header h3 {
+    margin-top: 0;
+}
+
+#sidebar .account-item {
+    border-bottom: dotted 2px #c0c0c0;
+}
+
+#sidebar .account-item.last {
+    border-bottom: 0;
+}

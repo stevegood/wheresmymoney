@@ -11,13 +11,13 @@ class DashboardController {
     def springSecurityService
 
     def afterInterceptor = { model ->
-        if (params.action != 'index') {
+        if (params.action != 'overview') {
             render( model as JSON )
             return
         }
     }
 
-    def index() {
+    def overview() {
 
         User user = User.findByUsername(springSecurityService.currentUser.username as String)
         int bankCount = Bank.countByPrimaryOwner(user)

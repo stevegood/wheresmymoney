@@ -24,19 +24,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <g:link controller="dashboard" action="index" class="navbar-brand">Where's My Money</g:link>
+            <g:link controller="dashboard" action="overview" class="navbar-brand">Where's My Money</g:link>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <sec:ifLoggedIn>
-                    <li class="${(params.controller == 'main' && params.action == 'index') ? 'active' : ''}">
-                        <g:link controller="dashboard" action="index">Dashboard</g:link>
+                    <li class="${(params.controller == 'dashboard' && params.action == 'overview') ? 'active' : ''}">
+                        <g:link controller="dashboard" action="overview">Overview</g:link>
                     </li>
-                    <li class="${(params.controller == 'bank') ? 'active' : ''}">
-                        <g:link controller="bank" action="list">My Banks</g:link>
+                    <li class="${(params.controller == 'transaction') ? 'active' : ''}">
+                        <g:link controller="transaction" action="list">Transactions</g:link>
                     </li>
                     <li class="${(params.controller == 'transaction' && params.action == 'importTransactions') ? 'active' : ''}">
-                        <g:link controller="transaction" action="import">Import Transactions</g:link>
+                        <g:link controller="transaction" action="import">Import</g:link>
                     </li>
                     <sec:ifAllGranted roles="ROLE_SUPER_ADMIN">
                         <li class="${params.controller == 'admin' ? 'active' : ''}">

@@ -45,6 +45,6 @@ class TransactionController {
         tmpFile.delete()
 
         flash.message = "Successfully imported ${transactions.size()}"
-        redirect(controller: 'dashboard', action: 'index')
+        redirect(controller: 'dashboard', action: 'overview')
     }
 }
